@@ -55,19 +55,6 @@ def get_conversational_chain():
     chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
     return chain
 
-
-import pickle
-
-# Ensure you trust the source before doing this
-allow_dangerous_deserialization = True
-
-if allow_dangerous_deserialization:
-    with open('your_pickle_file.pkl', 'rb') as f:
-        data = pickle.load(f)
-
-
-
-
 def user_input(user_questions):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
