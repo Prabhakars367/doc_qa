@@ -64,6 +64,7 @@ def get_conversational_chain():
 
 
 def user_input(user_question):
+  try:
     embeddings = GoogleGenerativeAIEmbeddings(model = "models/embedding-001")
     
     #new_db = FAISS.load_local("faiss_index", embeddings)
@@ -80,6 +81,8 @@ def user_input(user_question):
 
     print(response)
     st.write("Reply: ", response["output_text"])
+  except generation_types.StopCandidateException as e:
+        st.error("We couldn't answer your question this time. Please try rephrasing your question or consider providing more context from the uploaded PDFs.")
 
 
 
