@@ -89,7 +89,7 @@ def user_input(user_question):
 
 def main():
     st.set_page_config("DOC Q/A")
-    st.header("Chat with DOCQA")
+    st.header("Chat with DOCQA made by prabhakar")
 
     user_question = st.text_input("Ask a Question from the PDF Files")
 
